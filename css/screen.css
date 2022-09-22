@@ -33,7 +33,7 @@
     --global-whitespace-lg: calc(var(--global-baseline)*4); /* = 32px */   
     --global-whitespace-xl: calc(var(--global-whitespace-md) * 3); /* = 48px */    
     --global-whitespace-xxl: calc(var(--global-whitespace-xl)*2); 
-    --global-border-width: 1px;
+    --global-buttonspace: calc(var(--global-baseline)*1.5-1px)
 }
 
 /* CSS variables here */
@@ -466,7 +466,7 @@ input {
 */
 
 .c-logo{
-    height: 24px;
+    height: var(--global-whitespace);
     display: flex;
     justify-content: center;
 }
@@ -494,20 +494,13 @@ input {
 .c-card{
     background-color: #fff;
     border-radius: 3px;
+    border: 1px solid #fff;
     box-shadow:0 2px 4px rgb(0 0 0 /.1);
 }
-.c-card__header{
-    padding: 48px 48px 0;
-}
+
 
 .c-card__body {
     padding: var(--global-whitespace-xl);
-}
-
-.c-card__title {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 21px;
 }
 
 .c-card__footer{
@@ -515,6 +508,15 @@ input {
     padding: var(--global-whitespace) var(--global-whitespace) 0px ;
     border-top:  1px solid #E2E3E7;
 }
+
+.c-card__title {
+    text-align: center;
+    font-size: 18px;
+    line-height: var(--global-whitespace);
+    margin-top: var(--global-whitespace-xl);
+    margin-bottom: 0px;
+}
+
 /*
     Component: Forms
     ---
@@ -535,11 +537,15 @@ input {
     -moz-appearance: none;
     appearance: none;
     width: 100%;
-    border: var(--global-border-width) solid #E2E3E7;
+
+    border: 1px solid #E2E3E7;
     border-radius: 3px;
+
     font-family: inherit;
-    line-height: 24px;
-    padding: 11px 16px;
+    color: #20223A;
+    font-size: 16px;
+    line-height: var(--global-whitespace);
+    padding: 12px var(--global-whitespace-md);
     outline: none;
 }
 
